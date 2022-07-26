@@ -196,7 +196,60 @@ class HomeState extends State<Home> {
             ),
           ),
         ),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedLabelStyle:  TextStyle(color: descriptionColor, fontSize:15,fontFamily: rubikFont,fontWeight:FontWeight.w400),
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
 
+        type: BottomNavigationBarType.fixed,
+
+        items: [
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/icons/Outline.png",scale: 1.5,),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("assets/icons/CalendarBlank.png",scale: 1.5),
+            label: 'Schedule',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Container(
+                width: sizeInformations.width*58,
+                height: sizeInformations.width*58,
+                decoration: BoxDecoration(
+
+                    shape:BoxShape.circle,
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          mainColor.withOpacity(0.165),
+                          mainColor.withOpacity(0.3)
+                        ]
+                    )
+                ),
+                child:CircleAvatar(
+                    backgroundColor:Colors.transparent,
+                    radius:sizeInformations.width*29,
+                    child:CircleAvatar(
+                        radius:sizeInformations.width*20,
+                        backgroundColor:mainColor,
+                        child:Image.asset("assets/icons/CalendarPlus.png",scale: 2)
+                    )
+                )
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon:Image.asset("assets/icons/ChatsCircle.png",scale: 1.5),
+            label: 'Chat',
+          ),
+          BottomNavigationBarItem(
+            icon:Image.asset("assets/icons/User.png",scale: 1.5),
+            label: 'Profile',
+
+          )],),
     );
   }
 }
