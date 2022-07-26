@@ -368,37 +368,60 @@ class myScheduleState extends State<mySchedule>{
         ],
       ),
     ),
-    bottomNavigationBar: BottomNavigationBar(items: [
+    bottomNavigationBar: BottomNavigationBar(
+      unselectedLabelStyle:  TextStyle(color: descriptionColor, fontSize:15,fontFamily: rubikFont,fontWeight:FontWeight.w400),
+      showUnselectedLabels: true,
+      showSelectedLabels: true,
+
+      type: BottomNavigationBarType.fixed,
+
+      items: [
       BottomNavigationBarItem(
-        icon: Icon(Icons.home_outlined,color: mainColor,),
+        icon: Image.asset("assets/icons/Outline.png",scale: 1.5,),
         label: 'Home',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.calendar_today_outlined),
+        icon: Image.asset("assets/icons/CalendarBlank.png",scale: 1.5),
         label: 'Schedule',
       ),
+
       BottomNavigationBarItem(
         icon: Container(
-          margin:EdgeInsets.only(bottom:0),
-          decoration: BoxDecoration(
-           color:mainColor,
-            shape:BoxShape.circle,
+          width: sizeInformations.width*58,
+           height: sizeInformations.width*58,
+            decoration: BoxDecoration(
 
-          ),
-          //color: mainColor,
-          child: Icon(Icons.call),),
-        label: 'Calls',
+              shape:BoxShape.circle,
+              gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      mainColor.withOpacity(0.165),
+                      mainColor.withOpacity(0.3)
+                    ]
+                )
+            ),
+            child:CircleAvatar(
+                backgroundColor:Colors.transparent,
+             radius:sizeInformations.width*29,
+              child:CircleAvatar(
+                   radius:sizeInformations.width*20,
+                backgroundColor:mainColor,
+                child:Image.asset("assets/icons/CalendarPlus.png",scale: 2)
+    )
+            )
+        ),
+       label: '',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.call),
-        label: 'Calls',
+        icon:Image.asset("assets/icons/ChatsCircle.png",scale: 1.5),
+        label: 'Chat',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.account_box),
-        label: 'Calls',
-      ),
+        icon:Image.asset("assets/icons/User.png",scale: 1.5),
+        label: 'Profile',
 
-    ],),
+    )],),
   );
   }
 

@@ -4,6 +4,7 @@ import '../Ressources/colors&fonts.dart';
 import '../Ressources/resources.dart';
 import '../Widgets/upComingShecudle.dart';
 
+
 class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -16,7 +17,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     sizeInformations().Size(context);
     String? _value=stringDoctorPlace;
-    String? _value2='';
+
     return Scaffold(
       backgroundColor: backgndwhiteColor,
       body: SafeArea(

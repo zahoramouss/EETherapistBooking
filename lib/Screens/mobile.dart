@@ -17,7 +17,9 @@ class mobile extends StatefulWidget {
 
 class mobileState extends State<mobile> {
   @override
-  void setitile(){}
+  void setitile(){
+    Navigator.pushNamed(context, '/home');
+  }
   Widget build(BuildContext context) {
     sizeInformations().Size(context);
     return Scaffold(
@@ -108,6 +110,6 @@ class mobileState extends State<mobile> {
       ),
     );
     // TODO: implement build
-    throw UnimplementedError();
+
   }
 }

@@ -13,6 +13,9 @@ class ChooseDate extends StatefulWidget{
 } }
 class ChooseDateState extends State<ChooseDate>{
   @override
+  onClick(){
+    Navigator.pushNamed(context, '/chooseAdoctor');
+  }
   Widget build(BuildContext context) {
     sizeInformations().Size(context);
    return Scaffold(
@@ -396,7 +399,7 @@ class ChooseDateState extends State<ChooseDate>{
                    ],),
                  ],),
                ),
-               buttonSlow(sizeInformations.width,  (){},stringButtonNextFindAdoctor,sizeInformations.height,sizeInformations.width),
+               buttonSlow(sizeInformations.width, onClick,stringButtonNextFindAdoctor,sizeInformations.height,sizeInformations.width),
 
              ],
            )
